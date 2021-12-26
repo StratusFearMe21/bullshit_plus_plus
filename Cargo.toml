@@ -1,0 +1,46 @@
+[package]
+name = "bullshit_plus_plus"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+rand = "*"
+getrandom = "*"
+rand_xoshiro = "*"
+structopt = "*"
+const_colors = "*"
+reqwest = "*"
+serde_json = "*"
+base91 = "*"
+pdf-writer = "*"
+horrorshow = "*"
+once_cell = "*"
+tiny-skia = "*"
+anyhow = "*"
+libloading = "*"
+tokio = { version = "*", features = ["rt"] }
+unchecked_unwrap = "*"
+memmap = "*"
+futures = "*"
+rand_derive2 = { git = "https://github.com/StratusFearMe21/rand_derive2" }
+dotenv_codegen = "*"
+
+[dev-dependencies]
+actix-web = "*"
+actix-files = "*"
+
+[build-dependencies]
+tiny-skia = "*"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 3
