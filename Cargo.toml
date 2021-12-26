@@ -9,33 +9,36 @@ edition = "2021"
 path = "src/lib.rs"
 
 [dependencies]
+# Random generation
 rand = "*"
 getrandom = "*"
 rand_xoshiro = "*"
+rand_derive2 = { git = "https://github.com/StratusFearMe21/rand_derive2" }
+
+# Command line utilities
 structopt = "*"
 const_colors = "*"
-reqwest = "*"
+
+# Encoding
 serde_json = "*"
 base91 = "*"
-pdf-writer = "*"
 horrorshow = "*"
+
+# Unsplash
+reqwest = "*"
+tokio = { version = "*", features = ["rt"] }
+futures = "*"
+
+# Misc
 once_cell = "*"
 tiny-skia = "*"
 anyhow = "*"
-libloading = "*"
-tokio = { version = "*", features = ["rt"] }
-unchecked_unwrap = "*"
-memmap = "*"
-futures = "*"
-rand_derive2 = { git = "https://github.com/StratusFearMe21/rand_derive2" }
 dotenv_codegen = "*"
 
-[dev-dependencies]
-actix-web = "*"
-actix-files = "*"
-
-[build-dependencies]
-tiny-skia = "*"
+# Unsafe
+libloading = "*"
+unchecked_unwrap = "*"
+memmap = "*"
 
 [profile.release]
 lto = "fat"
